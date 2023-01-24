@@ -1,5 +1,12 @@
 const sp = require("svelte-preprocess");
 const auto = require("autoprefixer");
+const isPrd = process.env.NODE_ENV === "production";
+
+const babelOptions = () => {
+  return {
+    plugins: isPrd ? ["transform-remove-console"] : [],
+  };
+};
 
 module.exports = {
   mount: {
@@ -17,8 +24,16 @@ module.exports = {
           postcss: {
             plugins: [auto()],
           },
+          babel: babelOptions(),
         }),
       },
+    ],
+    [
+      "@snowpack/plugin-babel",
+      {
+        transformOptions: babelOptions(),
+      },
+      "@snowpack/plugin-dotenv",
     ],
   ],
 };
