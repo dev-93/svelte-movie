@@ -4,7 +4,7 @@ const isPrd = process.env.NODE_ENV === "production";
 
 const babelOptions = () => {
   return {
-    plugins: isPrd ? ["transform-remove-console"] : [],
+    plugins: [],
   };
 };
 
@@ -33,8 +33,9 @@ module.exports = {
       {
         transformOptions: babelOptions(),
       },
-      "@snowpack/plugin-dotenv",
     ],
+    "@snowpack/plugin-dotenv",
+    "@snowpack/plugin-optimize",
   ],
   alias: {
     "~": "./src",
