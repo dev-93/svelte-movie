@@ -14,12 +14,19 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "brwoserlist": [
+    "> 1%",
+    "last 2 versions"
+  ],
   "bugs": {
     "url": "https://github.com/dev-93/svelte-movie/issues"
   },
   "homepage": "https://github.com/dev-93/svelte-movie#readme",
   "devDependencies": {
+    "@snowpack/plugin-sass": "^1.4.0",
     "@snowpack/plugin-svelte": "^3.7.0",
+    "autoprefixer": "^10.4.13",
+    "postcss": "^8.4.21",
     "snowpack": "^3.8.8",
     "svelte": "^3.55.1"
   }
