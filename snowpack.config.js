@@ -36,4 +36,7 @@ module.exports = {
       "@snowpack/plugin-dotenv",
     ],
   ],
+  alias: {
+    "~": "./src",
+  },
 };
